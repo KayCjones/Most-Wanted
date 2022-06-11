@@ -90,7 +90,7 @@ function mainMenu(person, people) {
             // Stop application execution
             return;
         case "test":
-            console.log(searchByTraits(people));
+            console.log(displayPersonFamily(person, people));
             break;
         default:
             // Prompt user again. Another instance of recursion
@@ -329,12 +329,15 @@ function searchByOccupation(people){
 }
 
 function displayPersonFamily(person, people){
-    let userInput =  
     let results = people.filter(
         function(el){
-            if(el.id.includes(el.id)
+            if(el.parents.includes(el.id)){
+                return true;
+            }    
         }
     );
+    console.log(results.includes(el.id))
+    return results;
 }
 
 function displayPersonDescendants(person){
